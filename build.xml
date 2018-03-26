@@ -1,0 +1,44 @@
+<project name="Crystal-Lotus" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+
+    <property file="build.properties"/>
+    <property environment="env"/>
+
+    
+    <target name="deploy">
+      <sf:deploy username="${sf.username}" 
+	  password="${sf.password}"
+	  serverurl="${sf.serverurl}"
+	  deployRoot="src" 
+	  runAllTests="false"
+	  logType="Detail"/>
+    </target>
+	
+	<target name="deployCheckOnly">
+      <sf:deploy username="${sf.username}" 
+	  password="${sf.password}"
+	  serverurl="${sf.serverurl}"
+	  deployRoot="src" 
+	  runAllTests="false"
+	  checkOnly="true"
+	  logType="Detail"/>
+    </target>
+	
+	<target name="deployRunAllTests">
+      <sf:deploy username="${sf.username}" 
+	  password="${sf.password}"
+	  serverurl="${sf.serverurl}"
+	  deployRoot="src" 
+	  runAllTests="true"
+	  logType="Detail"/>
+    </target>
+	
+	<target name="undeploy">
+      <sf:deploy username="${sf.username}" 
+	  password="${sf.password}"
+	  serverurl="${sf.serverurl}"
+	  deployRoot="undeploy" 
+	  runAllTests="false"
+	  logType="Detail"/>
+    </target>
+	
+</project>
