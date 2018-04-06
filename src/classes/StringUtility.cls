@@ -1,5 +1,6 @@
 public class StringUtility {
 	//Added a dummy comment
+	//Added another comment
 	
     public static String removeComments(String content){
         String newContent = content;
